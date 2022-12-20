@@ -1,7 +1,8 @@
 # registrationform_flask
 
 > Clone Project 
-1. Run following commands in cmd .
+1. Open a new empty directory .
+2. Run following commands in cmd .
 * git clone https://github.com/sankarapusamhith/registrationform_flask.git
 * cd registrationform_flask
 
