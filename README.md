@@ -28,7 +28,7 @@
 
 > Start flask app
 1. Run following command in cmd .
-* flask run.py
+* python run.py
 2. Once the app is up and running , we'll get a link in terminal from which we can access the application .
 
 
