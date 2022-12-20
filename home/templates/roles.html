@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="padding-top: 1%; text-align: center;">{{current_user.name}} Info</h1>
+    <table class="table table-hover mx-auto table-bordered" style="width:50%;" id="table-role">
+        <caption></caption>
+        <tr>
+            <th id="name">Name</th>
+            <td>{{current_user.name}}</td>
+        </tr>
+        <tr>
+            <th id="email">Email</th>
+            <td>{{current_user.email}}</td>
+        </tr>
+        <tr>
+            <th id="country">Country</th>
+            <td>{{current_user.country}}</td>
+        </tr>
+        <tr>    
+            <th id="nationality">Nationality</th>
+            <td>{{current_user.nationality}}</td>
+        </tr>
+        <tr>    
+            <th id="phone">Phone</th>
+            <td>{{current_user.phone}}</td>
+        </tr>
+        <tr>
+            <th id="role">Role</th>
+            <td>{{current_user.role}}</td>
+        </tr>
+    </table>
+
+    
+{% endblock content %}
+

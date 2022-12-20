@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="register">
+    <h1>Register</h1>
+    <div class="links">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}" class="active">Register</a>
+    </div>
+    <div class="error_msg" style="padding-left: 5%; padding-top:3% ; color: red;">{{ error_msg }}</div>
+    {% if msg!= '' %}
+        <div class="msg" style="padding-left: 5%; color: green;">{{ msg }}. go to <a href="{{ url_for('login') }}">login</a></div>
+    {% endif %}
+    <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+        <label for="name">
+            <em class="fa fa-user"></em>
+        </label>
+        <input type="text" name="name" placeholder="Name" id="name" value="{{request.form['name']}}" minlength="3" required>
+
+        <label for="email">
+            <em class="fa fa-envelope-open"></em>
+        </label>
+        <input type="email" name="email" placeholder="Email" id="email" value="{{request.form['email']}}" required>
+
+        <label for="country">
+            <em class="fa fa-globe"></em>
+        </label>
+        <input type="text" name="country" placeholder="Country" id="country" value="{{request.form['country']}}" required>
+
+        <label for="nationality">
+            <em class="fa fa-flag"></em>
+        </label>
+        <input type="text" name="nationality" placeholder="Nationality" id="nationality" value="{{request.form['nationality']}}" required>
+
+        <label for="phone">
+            <em class="fa fa-phone"></em>
+        </label>
+        <input type="phone" name="phone" placeholder="Phone" id="phone" value="{{request.form['phone']}}" required>
+
+        <label for="password">
+            <em class="fa fa-lock"></em>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" value="{{request.form['password']}}" required>
+
+        <label for="role">
+            <em class="fa fa-universal-access"></em>
+        </label>
+        <select name="role" id="role" placeholder="select a role" value="{{request.form['role']}}" required>
+            <option value="" disabled selected>Select your option</option>
+            <option value="student">Student</option>
+            <option value="staff">Staff</option>
+            <option value="admin">Admin</option>
+            <option value="editor">Editor</option>
+        </select>                    
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+
+{% endblock content %}

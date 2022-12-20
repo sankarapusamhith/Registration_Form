@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if current_user.role == 'admin' %}
+        <h1 style="padding-top: 1%; padding-left: 1%;">Users Info</h1>
+        <table class="table table-hover table-bordered">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th id="#">ID</th>
+                    <th id="name">Name</th>
+                    <th id="email">Email</th>
+                    <th id="country">Country</th>
+                    <th id="nationality">Nationality</th>
+                    <th id="phone">Phone</th>
+                    <th id="role">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in user%}
+                <tr>
+                    <th scope="row">{{u.id}}</th>
+                    <td>{{u.name}}</td>
+                    <td>{{u.email}}</td>
+                    <td>{{u.country}}</td>
+                    <td>{{u.nationality}}</td>
+                    <td>{{u.phone}}</td>
+                    <td>{{u.role}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% elif current_user.role == 'staff' %}
+        <h1 style="padding-top: 1%; padding-left: 1%;">Users Info</h1>
+        <table class="table table-hover table-bordered">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th id="#">ID</th>
+                    <th id="name">Name</th>
+                    <th id="email">Email</th>
+                    <th id="country">Country</th>
+                    <th id="nationality">Nationality</th>
+                    <th id="phone">Phone</th>
+                    <th id="role">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in user%}
+                    {% if u.role=='student' %}
+                    <tr>
+                        <th scope="row">{{u.id}}</th>
+                        <td>{{u.name}}</td>
+                        <td>{{u.email}}</td>
+                        <td>{{u.country}}</td>
+                        <td>{{u.nationality}}</td>
+                        <td>{{u.phone}}</td>
+                        <td>{{u.role}}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% elif current_user.role == 'editor' %}
+
+        <h1 style="padding-top: 1%; padding-left: 1%;">Users Info</h1>
+        <table class="table table-hover table-bordered">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th id="#">ID</th>
+                    <th id="name">Name</th>
+                    <th id="role">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in user%}
+                    {% if u.role=='student' %}
+                    <tr>
+                        <th scope="row">{{u.id}}</th>
+                        <td>{{u.name}}</td>
+                        <td>{{u.role}}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% elif current_user.role == 'student' %}
+               
+    {% endif %}
+
+
+{% endblock content %}
