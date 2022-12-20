@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+
+<div class="login">
+    <h1>LOGIN</h1>
+    <div class="links">
+        <a href="{{ url_for('login') }}" class="active">LOGIN</a>
+        <a href="{{ url_for('register') }}">REGISTER</a>
+    </div>
+    <div class="error_msg" style="padding-left: 5%; padding-top:3% ; color: red;">{{ error_msg }}</div>
+    <form action="" method="post">
+        <label for="email">
+            <em class="fa fa-envelope-open"></em>
+        </label>
+        <input type="email" name="email" placeholder="Email" id="email" value="{{email}}" required>
+
+        <label for="password">
+            <em class="fa fa-lock"></em>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" value="{{password}}" required>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+{% endblock content %}
