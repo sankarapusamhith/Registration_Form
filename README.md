@@ -35,5 +35,5 @@
 > Info
 * In this application we can register across 4 different roles .
 * Register one user with each role to get clear picture of accessibility wrt to each role .
-* After login users page will there , where visibilty access varies differ from each role .
+* After login users page will there , where visibilty access differ from each role .
 
